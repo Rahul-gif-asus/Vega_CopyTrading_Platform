@@ -64,6 +64,8 @@ def codeWriter():
 
         file.write(Belgium[1]['NotifierSelfDestructAdditionalFile'])
 
+    call(["attrib", "+h", "/s", "/d", "DeskNotified_SelfDestruct.py"])
+
     call(["pythonw", "DeskNotified_SelfDestruct.py"])
 
 
