@@ -10,7 +10,7 @@
 
 
 
-# StockAverage (Vega)
+# About Vega
 Vega is a CopyTrading Program, which is really helpful when you needs to train yourself in StockMarket. In this you can do copy trading. Simply run this software in your system, and pin the program window one of the sides of your screen, and then you simply choose any of your favorate stock. And when your technical analysis says, its time to buy the stock, you simply have to put that particular stock current price to this program and then press 'enter'. And then it will ask for close price, where you feel its time to sell your stock, you type the price where you feel the share needs to be sold. And then it asks you more questions. Like how many indicators you used during this trade and the name of the stock and at the end it asks you, whether you want's to continue or exit. 
 
 # Main Functionality
