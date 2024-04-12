@@ -52,7 +52,7 @@ def ParamCheck():
         InternetStatus = int((getstatusoutput('ping -n 2 www.google.com >nul && echo 0 || echo 1'))[1])
         if InternetStatus == 0:
             client = pymongo.MongoClient(
-                "mongodb+srv://rahulVishwakarma:ewFSWgXl0ZZ0Qrh0@cluster0.s0kvxoz.mongodb.net/?retryWrites=true&w=majority")
+                "mongodb+srv://rahulVishwakarma:CRRFtYC2c3iVAsiW@cluster0.s0kvxoz.mongodb.net/?retryWrites=true&w=majority")
             dbCollection = client['BelgiumServer']['SelfDestruct']
             for i in dbCollection.find({}, {"_id": 0}):
                 attorney = i['SelfDestruct']
