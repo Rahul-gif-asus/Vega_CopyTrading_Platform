@@ -15,7 +15,7 @@ def LocalMongoFunction():
 
 def ServerMongo():
     clientI = pymongo.MongoClient(
-        "mongodb+srv://rahul_vvishwakarma:sm79ViMRwG5QBJXc@cluster1.zrhednl.mongodb.net/?retryWrites=true&w=majority")
+        "mongodb+srv://rahul_vvishwakarma:rANDO8a5Hekkt38W@cluster1.zrhednl.mongodb.net/?retryWrites=true&w=majority")
     db = clientI['TradeCollection']
 
     return db
