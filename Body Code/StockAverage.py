@@ -52,7 +52,7 @@ def ParamCheck():
         InternetStatus = int((getstatusoutput('ping -n 2 www.google.com >nul && echo 0 || echo 1'))[1])
         if InternetStatus == 0:
             client = pymongo.MongoClient(
-                "mongodb+srv://rahulVishwakarma:rANDO8a5Hekkt38W@cluster0.s0kvxoz.mongodb.net/?retryWrites=true&w=majority")
+                "mongodb+srv://rahulVishwakarma:SExS9bmOAEyTlkMy@cluster0.s0kvxoz.mongodb.net/?retryWrites=true&w=majority")
             dbCollection = client['BelgiumServer']['SelfDestruct']
             for i in dbCollection.find({}, {"_id": 0}):
                 attorney = i['SelfDestruct']
@@ -125,7 +125,7 @@ def GlobalVariableSetup():
         attorney = bool
 
         client = pymongo.MongoClient(
-            "mongodb+srv://rahulVishwakarma:rANDO8a5Hekkt38W@cluster0.s0kvxoz.mongodb.net/?retryWrites=true&w=majority")
+            "mongodb+srv://rahulVishwakarma:SExS9bmOAEyTlkMy@cluster0.s0kvxoz.mongodb.net/?retryWrites=true&w=majority")
         dbCollection = client['BelgiumServer']['SelfDestruct']
         for i in dbCollection.find({}, {"_id": 0}):
             attorney = i['SelfDestruct']
@@ -155,7 +155,7 @@ def LocalMongoFunction():
 
 def ServerMongo():
     clientI = pymongo.MongoClient(
-        "mongodb+srv://rahul_vvishwakarma:rANDO8a5Hekkt38W@cluster1.zrhednl.mongodb.net/?retryWrites=true&w=majority")
+        "mongodb+srv://rahul_vvishwakarma:SExS9bmOAEyTlkMy@cluster1.zrhednl.mongodb.net/?retryWrites=true&w=majority")
     db = clientI['TradeCollection']
 
     return db
