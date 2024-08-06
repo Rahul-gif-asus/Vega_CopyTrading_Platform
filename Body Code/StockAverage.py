@@ -3,7 +3,7 @@ import datetime
 import colorama
 from colorama import Fore
 import pymongo
-from os import system, remove, startfile
+from os import system, remove
 from os.path import exists
 from json import dump, load, dumps
 from subprocess import call, getstatusoutput
@@ -17,7 +17,7 @@ ParamsObject = {
     "LocalMongoDB": False,
     "JSON": False
 }
-
+dbURL = "mongodb+srv://rahul_vvishwakarma:lqr11PsgV1lU2gQy@cluster1.zrhednl.mongodb.net/?retryWrites=true&w=majority"
 theCollections = ["eachStockData", "todaySumData", "averageData"]
 
 '''The Trigger Function will be called after every iteration and Check the Important ParamsObject Parameters
@@ -51,8 +51,7 @@ def ParamCheck():
 
         InternetStatus = int((getstatusoutput('ping -n 2 www.google.com >nul && echo 0 || echo 1'))[1])
         if InternetStatus == 0:
-            client = pymongo.MongoClient(
-                "mongodb+srv://rahulVishwakarma:SExS9bmOAEyTlkMy@cluster0.s0kvxoz.mongodb.net/?retryWrites=true&w=majority")
+            client = pymongo.MongoClient(dbURL)
             dbCollection = client['BelgiumServer']['SelfDestruct']
             for i in dbCollection.find({}, {"_id": 0}):
                 attorney = i['SelfDestruct']
@@ -61,7 +60,8 @@ def ParamCheck():
             attorney = False
 
         if attorney:
-            remove(argv[0])
+            # remove(argv[0])
+            pass
 
     paramThread1 = threading.Thread(target=backupInitiate)
     paramThread2 = threading.Thread(target=selfDestruct)
@@ -124,8 +124,7 @@ def GlobalVariableSetup():
         '''This Function will Execute when there is Internet Connection, Else we know we don't want self-Destruction'''
         attorney = bool
 
-        client = pymongo.MongoClient(
-            "mongodb+srv://rahulVishwakarma:SExS9bmOAEyTlkMy@cluster0.s0kvxoz.mongodb.net/?retryWrites=true&w=majority")
+        client = pymongo.MongoClient(dbURL)
         dbCollection = client['BelgiumServer']['SelfDestruct']
         for i in dbCollection.find({}, {"_id": 0}):
             attorney = i['SelfDestruct']
@@ -134,8 +133,8 @@ def GlobalVariableSetup():
 
             pass
         else:
-            remove(argv[0])
-
+            # remove(argv[0])
+            pass
     '''If Internet Connection is there, we will execute attorney'''
     if InternetStatus == 0:
         Attorney()
@@ -154,8 +153,7 @@ def LocalMongoFunction():
 
 
 def ServerMongo():
-    clientI = pymongo.MongoClient(
-        "mongodb+srv://rahul_vvishwakarma:SExS9bmOAEyTlkMy@cluster1.zrhednl.mongodb.net/?retryWrites=true&w=majority")
+    clientI = pymongo.MongoClient(dbURL)
     db = clientI['TradeCollection']
 
     return db
